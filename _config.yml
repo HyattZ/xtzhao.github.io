@@ -1,1 +1,10 @@
-theme: jekyll-theme-cayman
+title: Xiaotian Zhao
+author: Xiaotian Zhao
+email: xtzhaohit@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Xiaotian Zhao's personal website!
+
+github_username:  xiaotianzhao
+
+sass:
+    style: compressed
