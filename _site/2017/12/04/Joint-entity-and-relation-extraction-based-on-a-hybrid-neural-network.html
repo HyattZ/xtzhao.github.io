@@ -5,14 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
 
-    <title>Xiaotian Zhao</title>
-    <meta name="description" content="Xiaotian Zhao&#39;s personal website!" />
+    <title>Joint Entity And Relation Extraction Based On A Hybrid Neural Network</title>
+    <meta name="description" content="Abstract" />
     
   
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen,projection" href="/assets/materialize.css" />
     <link rel="stylesheet" type="text/css" media="screen,projection" href="/assets/main.css">
-    <link rel="canonical" href="http://localhost:4000/" />
+    <link rel="canonical" href="http://localhost:4000/2017/12/04/Joint-entity-and-relation-extraction-based-on-a-hybrid-neural-network.html" />
     <link rel="alternate" type="application/rss+xml" title="Xiaotian Zhao" href="/feed.xml" />
   
     
@@ -89,111 +89,55 @@
 </nav>
 
 
-          <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Xiaotian Zhao</h1>
-      <div class="row center">
-        <h5 class="header col s12 light"><p>Be a normal man.</p>
-</h5>
-      </div>
-        
-      <!-- <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div> -->
-      <br><br>
-
-    </div>
-  </div>
-
-  <div class="container">
+        <div class="container">
     <div class="section">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-      <!--   Icon Section   -->
-      <div class="row">
-<!--         <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Joint Entity And Relation Extraction Based On A Hybrid Neural Network</h1>
+        <p class="post-meta">
+          <time datetime="2017-12-04T00:00:00+08:00" itemprop="datePublished">
+            
+            Dec 4, 2017
+          </time>
+          </p>
+      </header>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-        </div> -->
+      <div class="post-content" itemprop="articleBody">
+        <p><strong>Abstract</strong></p>
 
-        <div class="col s12 m6">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">Profile</h5>
+<p>本文提出的是一个混合模型，包括一个通用的Bi-LSTM Encoder Decoder网络来实现实体抽取和一个CNN来做关系分类．在公开数据集ACE05上面验证了方法的可靠性．</p>
 
-            <p class="light">Bachelor degree at Harbin Institute of Technology at Weihai,Graduate students at Harbin Institute of Technology</p>
-          </div>
-        </div>
+<p><strong>Introduction</strong></p>
 
-        <div class="col s12 m6">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Interests</h5>
+<p>传统方法先做NER（命名实体识别），再做RC（关系分类）．联合训练将这两种任务结合起来可以降低级联错误（错误传播，在命名实体识别中识别错误的实体，在关系分类时必然不会正确）．</p>
 
-            <p class="light center">Natural language processing,Machine Learning,Deep Learning,J2EE</p>
-          </div>
-        </div>
+<p>基于CNN的关系分类做法是：两个实体之间的语句被送到关系分类器中去做关系分类．</p>
+
+<p><strong>Related works</strong></p>
+
+<p>实体和关系抽取的两种主要框架：pipeline method和joint learning model.pipeline method主要分为两个步骤,NER和RC．joint learning model联合训练．</p>
+
+<p>命名实体识别现存的系统大多都是传统线性模型，如HMM，CRF等．现在又提出了很多NN的方法，这些NN的方法，基本都采用Bi-LSTM作为Encoder，在Decoder上有所不同</p>
+
+<p>关系抽取三种方法：基于手工特征的方法，基于NN的方法和其他一些数值方法（核方法）．</p>
+
+<p><strong>Their Method</strong></p>
+
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VBcD02jFhgkjZwt9qQxA5ictEzIzVFnfBSHWia0tDSxO1IH0FFARmgzNM4UFCcibQLMhm0H0lUibGiauyXGuuSFdnDw/?tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="img" /></p>
+
+<p>在训练时，两个任务都可以通过反向传播算法来更新共享参数（即Bi-LSTM的encoder的各个参数）实现两个子任务之间的依赖．</p>
+
+<p><strong>注</strong>
+共享参数的训练，可以尝试</p>
+
       </div>
 
-    </div>
       
-    </div>
-    <div style="background: #ddd">
-    <div class="container last-post">
-    <section>
-        <h5>Latest Post</h5>
-        <ul class="collection">
-        
-        <li class="collection-item avatar">
-          
-          <div class="date-post">12/04</div>
-          <span class="title"><a class="post-link" href="/2017/12/04/Joint-entity-and-relation-extraction-based-on-a-hybrid-neural-network.html">Joint Entity And Relation Extraction Based On A Hybrid Neural Network</a></span>
-          <p>
-             <p><strong>Abstract</strong></p>...
-          </p>
-          <a href="/2017/12/04/Joint-entity-and-relation-extraction-based-on-a-hybrid-neural-network.html" class="secondary-content"><i class="material-icons">navigate_next</i></a>
-        </li>
-        
-        <li class="collection-item avatar">
-          
-          <div class="date-post">12/01</div>
-          <span class="title"><a class="post-link" href="/2017/12/01/Effective-Approaches-to-Attention-based-Neural-Machine-Translation.html">Effective Approaches To Attention Based Neural Machine Translation</a></span>
-          <p>
-             <p><strong>Abstract</strong></p>...
-          </p>
-          <a href="/2017/12/01/Effective-Approaches-to-Attention-based-Neural-Machine-Translation.html" class="secondary-content"><i class="material-icons">navigate_next</i></a>
-        </li>
-        
-        <li class="collection-item avatar">
-          
-          <div class="date-post">11/26</div>
-          <span class="title"><a class="post-link" href="/2017/11/26/NEURAL-Machine-Translation-By-Jointly-Learning-To-Align-And-Translate.html">Neural Machine  translation By Jointly Learning To Align And Translate</a></span>
-          <p>
-             <p><strong>Abstract</strong></p>...
-          </p>
-          <a href="/2017/11/26/NEURAL-Machine-Translation-By-Jointly-Learning-To-Align-And-Translate.html" class="secondary-content"><i class="material-icons">navigate_next</i></a>
-        </li>
-        
-        <li class="collection-item avatar">
-          
-          <div class="date-post">11/26</div>
-          <span class="title"><a class="post-link" href="/2017/11/26/Efficient-Estimation-of-Word-Representations-in-Vector-Space.html">Efficient Estimation Of word Representations In Vector Space</a></span>
-          <p>
-             <p><strong>Abstract</strong>...
-          </p>
-          <a href="/2017/11/26/Efficient-Estimation-of-Word-Representations-in-Vector-Space.html" class="secondary-content"><i class="material-icons">navigate_next</i></a>
-        </li>
-        
-        </ul>
-    </section>
+    </article>
     </div>
 </div>
-
-  </div>
+<script>$('.carousel.carousel-slider').carousel({fullWidth: true});</script>
 
       <footer class="page-footer orange">
     <div class="container">

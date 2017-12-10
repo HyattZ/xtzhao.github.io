@@ -2,6 +2,7 @@
 layout: post
 ---
 
+**Abstract**
 提出两个通用模型在超大的数据集上面计算词的连续的向量表示。
 
 **INTRODUCTION**

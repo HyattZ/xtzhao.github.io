@@ -14,14 +14,14 @@ layout: post
 
 **2. Neural Machine Translation**
 
+
 神经网络机器翻译是一个神经网络去刻画条件概率p(y|x)将输入x翻译到输出y.
 
 $log p(y|x) = \sum_{j=1}^m log p(y_j|y_{<j}, s)$
 
 s是输入x经过encoder之后得到的表示
 
-$p(y_j|y_{<j}, s) = softmax(g (h_j))$
-
+$p(y_j|y_{<j}, s) = softmax(g(h_j))$,
 $h_j=f(h_{j-1},s)$
 
 **3. Attention Based Model**
