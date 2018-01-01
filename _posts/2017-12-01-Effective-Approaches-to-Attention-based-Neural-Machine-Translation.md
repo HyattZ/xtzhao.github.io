@@ -17,16 +17,16 @@ layout: post
 
 神经网络机器翻译是一个神经网络去刻画条件概率p(y|x)将输入x翻译到输出y.
 
-$log p(y|x) = \sum_{j=1}^m log p(y_j|y_{<j}, s)$
+$log p(y\mid x) = \sum_{j=1}^m log p(y_j\mid y_{<j}, s)$
 
 s是输入x经过encoder之后得到的表示
 
-$p(y_j|y_{<j}, s) = softmax(g(h_j))$,
+$p(y_j \mid y_{<j}, s) = softmax(g(h_j))$,
 $h_j=f(h_{j-1},s)$
 
 **3. Attention Based Model**
 
-$h'_t = tanh(W_c[c_t; h_t])$,$p(y_t|y_{<t}, x) = softmax(W_sh'_t)$ 
+$h'_t = tanh(W_c[c_t; h_t])$,$p(y_t\mid y_{<t}, x) = softmax(W_sh'_t)$ 
 
 c_t是经过Attention对encoder的各个隐层计算的加权向量,h_t是decoder第t步的隐层输出．第一个表达式获得的是一个attentional vector，第二个表达式将这个vector计算之后投射到输出空间上面．
 

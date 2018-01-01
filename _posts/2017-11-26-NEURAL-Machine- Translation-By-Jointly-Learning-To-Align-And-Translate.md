@@ -24,9 +24,9 @@ RNN的最常用公式：$h_{t}=f(x_t,h_{t-1})$，$c=q(\{h_1,h_2,...,h_{T_{x}}\})
 
 **encoder-decoder里面的Decoder刻画的一个条件概率**：
 
-$p(y)=\prod_{t=1}^{T} p(y|\{y_1,...,y_{t-1}\},c)$，$p({y_t|\{y_1,...,y_{t-1}\},c})=g(y_{t-1},s_t,c)$
+$p(y)=\prod_{t=1}^{T} p(y \mid \{y_1,...,y_{t-1}\},c)$，$p({y_t \mid \{y_1,...,y_{t-1}\},c})=g(y_{t-1},s_t,c)$
 
-这里的$g(y_{t-1},s_t,c)$中$y_{t-1}$是前一个单词，$s_t$是隐状态，c是Encoder的输出
+这里的$g(y_{t-1},s_t,c)​$中$y_{t-1}​$是前一个单词，$s_t​$是隐状态，c是Encoder的输出
 
 **3.LEARNING TO ALIGN AND TRANSLATE**
 
